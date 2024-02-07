@@ -1,23 +1,17 @@
 <template>
     <div>
-        <Banner/> 
-        rjh
-        <div>
-            <ul v-for="item in ohDAta">
-      <li >{{ item.slug }}</li>
-    </ul>
-        </div>
-
+        <Banner/> t
     </div>
 </template>
 
-<script setup>
+<script >
 import Banner from './Banner.vue';
-import { fetchDataByGet } from '~/src/services/strapi';
- const ohDAta = await fetch(
-      fetchDataByGet('/comics')
-    ).then((res) => res.json());
-   
+export default {
+        name: 'HomePage',
+        components: {
+            Banner
+        }
+    }
 </script>
 
 <style scoped>
