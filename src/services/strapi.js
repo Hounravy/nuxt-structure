@@ -1,16 +1,14 @@
 
-import { getCMSDomain } from "../utilities/dev";
-
 export const fetchDataByGet = (url, params = {}) => {
   const newParams = `${
     Object.keys(params).length > 0 ? `?${new URLSearchParams(params).toString()}` : ''
   }`;
 
-  return `${getCMSDomain()}${url}${newParams}`;
+  return `${getAPI}${url}${newParams}`;
 };
 
 export const fetchImage = (url) => {
-  return `${getCMSDomain()}${url}`;
+  return `${getAPI}${url}`;
 };
 
 export const requestInit = (body, method = 'POST') => {

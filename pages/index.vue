@@ -2,22 +2,19 @@
     <div>
    <HomePage/>
    <div>
-    <ul v-for="item in ohDAta">
-      <li >{{ item.slug }}</li>
+    <ul v-for="item in data">
+      <li >{{ item.title }}</li>
     </ul>
         </div>
     </div>
 </template>
 
 <script setup>
-import HomePage from '~/src/components/pages/home/HomePage.vue';
 
-import { fetchDataByGet } from '~/src/services/strapi';
- const ohDAta = await fetch(
-      fetchDataByGet('/comics')
-    ).then((res) => res.json());
-   
-
+const config = useRuntimeConfig();
+const getAPI = config.public.apiBase;
+ const {data} = await useFetch(`${getAPI}/comics`);
+ console.log(data.value.length);
 </script>
 <style  scoped>
 
