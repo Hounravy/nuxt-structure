@@ -14,7 +14,6 @@
 const config = useRuntimeConfig();
 const getAPI = config.public.apiBase;
  const {data} = await useFetch(`${getAPI}/comics`);
- console.log(data.value.length);
 </script>
 <style  scoped>
 
