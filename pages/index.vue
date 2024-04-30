@@ -1,20 +1,14 @@
 <template>
     <div>
-   <HomePage/>
-   <div>
-    <ul v-for="item in data">
-      <li >{{ item.title }}</li>
-    </ul>
-        </div>
+   <PagesHomePage :products="products"/>
     </div>
 </template>
 
 <script setup>
 
-const config = useRuntimeConfig();
-const getAPI = config.public.apiBase;
- const {data} = await useFetch(`${getAPI}/comics`);
- console.log(data.value.length);
+const {apiBase} = useRuntimeConfig().public;
+ const { data: products } = await useFetch(`${apiBase}/products?limit=12&sort=desc`);
+
 </script>
 <style  scoped>
 

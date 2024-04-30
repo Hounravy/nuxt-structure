@@ -1,12 +1,9 @@
 <template>
-<NavBar/>
+<CommonLayoutNavBar/>
 <slot/>
-<Footer/>
+<CommonLayoutFooter/>
 </template>
-
 <script setup>
-import NavBar from '~/src/components/common/Layout/NavBar.vue';
-import Footer from '~/src/components/common/Layout/Footer.vue';
 </script>
 
 <style  scoped>
